@@ -3,7 +3,7 @@
 echo "\nBootstrap:\nworld_file_name=$WORLD_FILENAME\nconfigpath=$CONFIGPATH\nlogpath=$LOGPATH\n"
 echo "Copying plugins..."
 cp -Rfv /plugins/* ./ServerPlugins
-curl -o config.json -L $CONFIG_URL
+curl -o $CONFIGPATH/config.json -L $CONFIG_URL
 STORAGETYPE=$(cat $CONFIGPATH/config.json | jq -r '.StorageType')
 if [ $STORAGETYPE = "mysql" ]; then
   DATABASE_SERVER=$(cat $CONFIGPATH/config.json | jq -r '.MySqlHost' | cut -f1 -d':')
