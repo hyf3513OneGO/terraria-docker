@@ -22,7 +22,6 @@ FROM mono:6.12.0.122-slim
 LABEL maintainer="Ryan Sheehan <rsheehan@gmail.com>"
 
 # documenting ports
-EXPOSE 7777 7878
 
 # env used in the bootstrap
 ENV CONFIGPATH=/configs
