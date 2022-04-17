@@ -18,7 +18,6 @@ RUN unzip $TSHOCKZIP -d /tshock && \
     chmod +x /tshock/bootstrap.sh
 
 FROM mono:6.12.0.122
-RUN apt-get install curl
 LABEL maintainer="Ryan Sheehan <rsheehan@gmail.com>"
 
 # documenting ports
