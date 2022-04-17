@@ -1,7 +1,6 @@
 FROM alpine:3.15.0 AS base
 
-RUN apk add --update-cache \
-    unzip
+RUN apk add unzip
 
 # add the bootstrap file
 COPY bootstrap.sh /tshock/bootstrap.sh
