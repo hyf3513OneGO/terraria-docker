@@ -10,7 +10,7 @@ ENV TSHOCKZIP=TShock4.5.17_Terraria_1.4.3.6.zip
 
 # Download and unpack TShock
 ADD https://github.com/Pryaxis/TShock/releases/download/$TSHOCKVERSION/$TSHOCKZIP /
-RUN apk add curl
+
 RUN unzip $TSHOCKZIP -d /tshock && \    
     rm $TSHOCKZIP && \
     chmod +x /tshock/TerrariaServer.exe && \
@@ -18,7 +18,7 @@ RUN unzip $TSHOCKZIP -d /tshock && \
     chmod +x /tshock/bootstrap.sh
 
 FROM mono:6.12.0.122-slim
-
+RUN apk add curl
 LABEL maintainer="Ryan Sheehan <rsheehan@gmail.com>"
 
 # documenting ports
