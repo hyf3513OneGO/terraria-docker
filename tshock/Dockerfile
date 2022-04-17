@@ -28,7 +28,7 @@ EXPOSE 7777 7878
 ENV CONFIGPATH=/configs
 ENV LOGPATH=/tshock/logs
 ENV WORLD_FILENAME=""
-
+ENV CONFIG_URL=""
 # Allow for external data
 VOLUME ["/configs", "/tshock/logs", "/plugins","/worlds"]
 
