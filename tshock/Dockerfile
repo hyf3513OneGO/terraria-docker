@@ -11,6 +11,7 @@ ENV TSHOCKZIP=TShock4.5.17_Terraria_1.4.3.6.zip
 
 # Download and unpack TShock
 ADD https://github.com/Pryaxis/TShock/releases/download/$TSHOCKVERSION/$TSHOCKZIP /
+RUN apk add curl
 RUN unzip $TSHOCKZIP -d /tshock && \    
     rm $TSHOCKZIP && \
     chmod +x /tshock/TerrariaServer.exe && \
@@ -29,6 +30,7 @@ ENV CONFIGPATH=/configs
 ENV LOGPATH=/tshock/logs
 ENV WORLD_FILENAME=""
 ENV CONFIG_URL=""
+ENV SSC_CONFIG_URL=""
 # Allow for external data
 VOLUME ["/configs", "/tshock/logs", "/plugins","/worlds"]
 
